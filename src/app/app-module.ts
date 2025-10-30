@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { ProductModule } from './product/product-module';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,11 +12,13 @@ import { App } from './app';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ProductModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection()
+    provideZonelessChangeDetection(),
+    provideHttpClient()
   ],
   bootstrap: [App]
 })
